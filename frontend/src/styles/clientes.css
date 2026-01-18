@@ -1,0 +1,167 @@
+.page {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.pageHeader h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.pageHeader p {
+  margin: 4px 0 0;
+  color: #6b7280;
+}
+
+/* Botón principal */
+.btnPrimary {
+  background: #0f766e;
+  color: #fff;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btnPrimary:hover {
+  filter: brightness(0.95);
+}
+
+.card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.searchBar {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 12px;
+  padding: 12px 14px;
+  outline: none;
+}
+
+.searchBar:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15,118,110,0.15);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15,118,110,0.15);
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.table thead th {
+  text-align: left;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.rowActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.btnMini {
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.btnMini:hover {
+  background: #f3f4f6;
+}
+
+.btnDangerOutline {
+  border-color: rgba(239,68,68,0.4);
+  color: #b91c1c;
+}
+
+.btnDangerOutline:hover {
+  background: rgba(239,68,68,0.08);
+}
+
+@media (max-width: 900px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

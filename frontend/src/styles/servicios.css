@@ -1,0 +1,174 @@
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.pageHeader h2 {
+  margin: 0 0 6px;
+}
+
+.muted {
+  color: #666;
+  margin: 0;
+}
+
+.card {
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+  background: #fff;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.cardHeader h3 {
+  margin: 0;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.hint {
+  display: block;
+  margin-top: 6px;
+  color: #666;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions.full {
+  grid-column: 1 / -1;
+}
+
+.btn {
+  padding: 10px 14px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.primary {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
+.btn.danger {
+  border-color: #e66;
+  color: #a00;
+}
+
+.error {
+  border: 1px solid #f2b1b1;
+  background: #fff5f5;
+  color: #9b1c1c;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.search {
+  max-width: 360px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+}
+
+.tableWrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rowActions {
+  display: flex;
+  gap: 8px;
+}
+
+.cards {
+  display: none;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.miniCard {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.miniTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.miniBody {
+  margin-bottom: 10px;
+}
+
+.miniActions {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 720px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tableWrap {
+    display: none;
+  }
+
+  .cards {
+    display: grid;
+  }
+}

@@ -1,0 +1,43 @@
+.usersPage .btn {
+  border: 1px solid #d0d0d0;
+  background: #f7f7f7;
+  padding: 9px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: filter 0.12s ease, transform 0.05s ease, opacity 0.12s ease;
+}
+
+.usersPage .btn:hover {
+  filter: brightness(0.97);
+}
+
+.usersPage .btn:active {
+  transform: translateY(1px);
+}
+
+.usersPage .btn.primary {
+  background: #1f7a67;
+  color: #fff;
+  border-color: #1f7a67;
+}
+
+.usersPage .btn.primary:hover {
+  filter: brightness(0.95);
+}
+
+.usersPage .btn.danger {
+  background: #b94a48;
+  color: #fff;
+  border-color: #b94a48;
+}
+
+.usersPage .btn.danger:hover {
+  filter: brightness(0.95);
+}
+
+.usersPage .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+}

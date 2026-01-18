@@ -1,0 +1,130 @@
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: #f8f9fb;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.dashboardHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dashboardLogo {
+  height: 250px;
+  object-fit: contain;
+}
+
+.dashboardCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.dashCard {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.dashCard h4 {
+  margin: 0 0 6px;
+}
+
+.dashCard p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+.dashboardIcon {
+  display: block;
+  width: 64px;
+  max-width: 100%;
+  margin: 16px auto 0; 
+}
+.dashCard p {
+  text-align: justify;
+  line-height: 1.5; 
+}
+
+.dashKpiWrap {
+  margin: 14px 0 18px;
+  padding: 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.dashKpiHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.dashKpiTitle {
+  margin: 0;
+  font-size: 18px;
+}
+
+.dashKpiGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.dashKpiCard {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.dashKpiLabel {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.dashKpiValue {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.dashKpiHint {
+  font-size: 12px;
+  color: #666;
+}
+
+.muted {
+  color: #666;
+  font-size: 13px;
+}
+
+.error {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fdeeee;
+  border: 1px solid #f0c7c6;
+  color: #7a1f1d;
+}
+
+.dashKpiWrap .btn {
+  border: 1px solid #d0d0d0;
+  background: #f7f7f7;
+  padding: 8px 12px;
+  border-radius: 1
+}

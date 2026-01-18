@@ -1,0 +1,27 @@
+.quicknav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  justify-content: center;
+  flex-wrap: wrap;   
+}
+
+.qbtn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: #f3f4f6;
+  color: #111;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.qbtn:hover {
+  background: #111;
+  color: #fff;
+}
+
+.qbtn.active {
+  background: #111;
+  color: #fff;
+}
