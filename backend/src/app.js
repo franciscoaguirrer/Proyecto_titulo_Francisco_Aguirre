@@ -25,6 +25,10 @@ app.use("/api/auditoria", auditoriaRoutes);
 app.use("/api/servicios", serviciosRoutes);
 app.use("/api/dashboard", require("./modules/dashboard/dashboard.routes"));
 
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  credentials: true
+}));
 
 // Ruta de prueba
 app.get("/health", (req, res) => {

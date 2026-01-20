@@ -6,6 +6,8 @@ import Servicios from "./pages/Servicios";
 import Cotizaciones from "./pages/Cotizaciones";
 import Reservas from "./pages/Reservas";
 import AdminUsuarios from "./pages/AdminUsuarios";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 import { ProtectedRoute } from "./auth/ProtectedRoute";
 import { RoleRoute } from "./auth/RoleRoute";
@@ -23,6 +25,8 @@ export default function App() {
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/cotizaciones" element={<Cotizaciones />} />
           <Route path="/reservas" element={<Reservas />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           
           <Route element={<RoleRoute allow={["admin"]} />}>
             <Route path="/admin/usuarios" element={<AdminUsuarios />} />
