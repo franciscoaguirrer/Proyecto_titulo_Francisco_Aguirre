@@ -24,13 +24,9 @@ export default function ForgotPassword() {
 
     setLoading(true);
     try {
-      // Endpoint: ajusta si tu backend usa otra ruta
       await http.post("/api/auth/forgot-password", { email: cleanEmail });
-
-      // Mensaje “neutral” (buena práctica anti-enumeración)
       setDone(true);
     } catch (err: any) {
-      // No revelar si existe o no el usuario
       setDone(true);
     } finally {
       setLoading(false);

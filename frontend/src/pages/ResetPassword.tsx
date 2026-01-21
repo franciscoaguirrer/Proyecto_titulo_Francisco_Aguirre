@@ -3,9 +3,6 @@ import { Link, useParams, useSearchParams } from "react-router-dom";
 import http from "../api/http";
 
 export default function ResetPassword() {
-  // Soporta ambas formas:
-  // A) /reset-password/:token
-  // B) /reset-password?token=xxxx
   const { token: tokenParam } = useParams();
   const [searchParams] = useSearchParams();
   const tokenQuery = searchParams.get("token");
