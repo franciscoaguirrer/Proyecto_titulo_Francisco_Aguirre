@@ -16,16 +16,24 @@ const app = express();
 
 app.use(express.json());
 
+function normalizeUrl(url) {
+  return (url || "").trim().replace(/\/$/, "");
+}
+
 const allowedOrigins = [
   process.env.FRONTEND_URL,   
-  "https://proyecto-titulo-francisco-aguirre.vercel.app",    
-].filter(Boolean);
+  "http://localhost:5173", 
+].map(normalizeUrl).filter(Boolean);
 
 const corsMiddleware = cors({
   origin: (origin, callback) => {
     if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) return callback(null, true);
-    return callback(new Error("Not allowed by CORS: " + origin));
+
+    const o = normalizeUrl(origin);
+
+    if (allowedOrigins.includes(o)) return callback(null, true);
+
+    return callback(null, false);
   },
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
@@ -33,6 +41,7 @@ const corsMiddleware = cors({
 });
 
 app.use(corsMiddleware);
+app.options("*", corsMiddleware);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/privado", privateRoutes);
@@ -49,6 +58,15 @@ app.get("/health", (req, res) => {
   res.status(200).json({
     ok: true,
     message: "Making Trips API funcionando correctamente 🚐",
+  });
+});
+
+app.get("/_cors_debug", (req, res) => {
+  res.json({
+    ok: true,
+    origin: req.headers.origin || null,
+    allowedOrigins,
+    frontendUrlEnv: process.env.FRONTEND_URL || null,
   });
 });
 

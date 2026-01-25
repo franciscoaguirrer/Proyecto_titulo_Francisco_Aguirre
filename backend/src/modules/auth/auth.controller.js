@@ -16,7 +16,8 @@ async function forgotPasswordController(req, res) {
     const result = await forgotPassword(email);
     return res.json(result);
   } catch (e) {
-    return res.status(500).json({ message: "Error interno del servidor" });
+    console.error("forgotPasswordController error:", e);
+    return res.json(genericMsg);
   }
 }
 
