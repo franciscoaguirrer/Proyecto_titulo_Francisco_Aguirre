@@ -1,23 +1,47 @@
+.page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .dashboardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  gap: 12px;
+  padding: 10px 12px;
   border-radius: 12px;
   background: #f8f9fb;
   margin-bottom: 16px;
-  text-align: center;
 }
 
 .dashboardHeaderLeft {
   display: flex;
   align-items: center;
   gap: 18px;
+  min-width: 0;
 }
 
 .dashboardLogo {
-  height: 250px;
+  width: 160px;
+  height: auto;
   object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.dashboardHeaderLeft h1 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.dashboardHeaderLeft p {
+  margin: 6px 0 0;
 }
 
 .dashboardCards {
@@ -42,16 +66,15 @@
   margin: 0;
   color: #666;
   font-size: 14px;
+  text-align: justify;
+  line-height: 1.5;
 }
+
 .dashboardIcon {
   display: block;
   width: 64px;
   max-width: 100%;
-  margin: 16px auto 0; 
-}
-.dashCard p {
-  text-align: justify;
-  line-height: 1.5; 
+  margin: 16px auto 0;
 }
 
 .dashKpiWrap {
@@ -68,6 +91,7 @@
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 12px;
+  flex-wrap: wrap; 
 }
 
 .dashKpiTitle {
@@ -126,5 +150,38 @@
   border: 1px solid #d0d0d0;
   background: #f7f7f7;
   padding: 8px 12px;
-  border-radius: 1
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+
+  .dashKpiGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 10px;
+  }
+
+  .dashboardHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dashboardHeaderLeft {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .dashboardLogo {
+    width: 130px;
+  }
+
+  .dashKpiGrid {
+    grid-template-columns: 1fr;
+  }
 }

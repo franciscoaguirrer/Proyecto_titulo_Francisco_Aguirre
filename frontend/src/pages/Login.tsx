@@ -31,8 +31,8 @@ export default function Login() {
     <div className="auth-wrap">
       <form className="auth-card" onSubmit={onSubmit}>
         <div className="auth-head">
-          <h1 className="auth-title">Making Trips</h1>
-          <p className="muted">Inicia sesión para continuar</p>
+          <h1 className="auth-title"><center>Making Trips</center></h1>
+          <p className="muted"><center>Inicia sesión para continuar</center></p>
         </div>
 
         <div className="auth-field">

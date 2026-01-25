@@ -8,7 +8,6 @@ import Reservas from "./pages/Reservas";
 import AdminUsuarios from "./pages/AdminUsuarios";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-
 import { ProtectedRoute } from "./auth/ProtectedRoute";
 import { RoleRoute } from "./auth/RoleRoute";
 
@@ -17,16 +16,19 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
-        <Route path="/login" element={<Login />} />
 
+         {/* RUTAS PÚBLICAS */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+
+        {/* RUTAS PRIVADAS */}  
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/clientes" element={<Clientes />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/cotizaciones" element={<Cotizaciones />} />
           <Route path="/reservas" element={<Reservas />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
           
           <Route element={<RoleRoute allow={["admin"]} />}>
             <Route path="/admin/usuarios" element={<AdminUsuarios />} />

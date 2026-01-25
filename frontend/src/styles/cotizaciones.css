@@ -1,7 +1,8 @@
 .page {
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 24px 16px 60px;
+  padding: 16px 12px 60px;
 }
 
 .pageHeader h2 {
@@ -28,6 +29,7 @@
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 .cardHeader h3 {
@@ -90,6 +92,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .hint {
@@ -101,6 +104,8 @@
 .actions {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .btn {
@@ -152,6 +157,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 10px;
   background: #fafafa;
   border: 1px solid #eee;
@@ -162,7 +168,9 @@
 
 .tableWrap {
   width: 100%;
-  overflow: auto;
+  overflow-x: auto; 
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   border-radius: 12px;
   border: 1px solid #eee;
 }
@@ -170,7 +178,7 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 900px;
+  min-width: 900px; 
 }
 
 .table th,
@@ -204,23 +212,15 @@
   text-transform: lowercase;
 }
 
-.badge.pendiente {
-  border-color: #d9d9d9;
-}
-
-.badge.aprobada {
-  border-color: #b7e3b7;
-  background: #f4fff4;
-}
-
-.badge.rechazada {
-  border-color: #ffb3b3;
-  background: #fff7f7;
-}
+.badge.pendiente { border-color: #d9d9d9; }
+.badge.aprobada { border-color: #b7e3b7; background: #f4fff4; }
+.badge.rechazada { border-color: #ffb3b3; background: #fff7f7; }
 
 .itemsTableWrap {
   width: 100%;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   border-radius: 12px;
   border: 1px solid #eee;
 }
@@ -242,6 +242,37 @@
   font-size: 13px;
   color: #444;
   background: #fafafa;
+}
+
+@media (max-width: 600px) {
+  .pageHeader h2 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 820px) {

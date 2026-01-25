@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
 
 function createTransport() {
-  // SMTP genérico (recomendado para producción)
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT || 587),

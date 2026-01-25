@@ -50,7 +50,7 @@ async function forgotPassword(email) {
   const tokenHash = crypto.createHash("sha256").update(token).digest("hex");
 
   user.resetPasswordTokenHash = tokenHash;
-  user.resetPasswordExpiresAt = new Date(Date.now() + 60 * 60 * 1000); // 1 hora
+  user.resetPasswordExpiresAt = new Date(Date.now() + 60 * 60 * 1000);
   await user.save();
 
   // Link hacia frontend
@@ -61,7 +61,7 @@ async function forgotPassword(email) {
   if (!isMailEnabled()) {
     console.log("🔐 TOKEN RECUPERACIÓN (DEV):", token);
     console.log("🔗 LINK RECUPERACIÓN (DEV):", link);
-    return genericMsg; // importante: 200 OK desde el controller
+    return genericMsg;
   }
 
   // MODO REAL: enviar correo (si MAIL_ENABLED=true)

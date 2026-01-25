@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import "../styles/cotizaciones.css";
+import "../styles/reservas.css";
 
 import { getCotizacionesApi, type Cotizacion } from "../api/cotizaciones.api";
 import {

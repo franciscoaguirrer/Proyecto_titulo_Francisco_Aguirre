@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import http from "../api/http";
 
 export default function ResetPassword() {
-  const { token: tokenParam } = useParams();
   const [searchParams] = useSearchParams();
-  const tokenQuery = searchParams.get("token");
 
-  const token = tokenParam || tokenQuery || "";
+  const token = searchParams.get("token") || "";
+  const email = searchParams.get("email") || "";
 
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
@@ -17,7 +16,8 @@ export default function ResetPassword() {
 
   function validate() {
     if (!token) return "Token inválido o ausente.";
-    if (password.length < 8) return "La contraseña debe tener al menos 8 caracteres.";
+    if (!email) return "Email inválido o ausente.";
+    if (password.length < 6) return "La contraseña debe tener al menos 6 caracteres.";
     if (password !== confirm) return "Las contraseñas no coinciden.";
     return null;
   }
@@ -35,12 +35,13 @@ export default function ResetPassword() {
     setLoading(true);
     try {
       await http.post("/api/auth/reset-password", {
+        email,
         token,
-        password
+        newPassword: password,
       });
       setDone(true);
     } catch (e: any) {
-      setError("No se pudo restablecer la contraseña. Intenta nuevamente.");
+      setError(e?.response?.data?.message || "No se pudo restablecer la contraseña. Intenta nuevamente.");
     } finally {
       setLoading(false);
     }
