@@ -22,12 +22,12 @@ function normalizeUrl(url) {
 
 const allowedOrigins = [
   process.env.FRONTEND_URL,   
-  "http://localhost:5173", 
+  "http://localhost:5173",    
 ].map(normalizeUrl).filter(Boolean);
 
 const corsMiddleware = cors({
   origin: (origin, callback) => {
-    if (!origin) return callback(null, true);
+    if (!origin) return callback(null, true); 
 
     const o = normalizeUrl(origin);
 
@@ -41,7 +41,6 @@ const corsMiddleware = cors({
 });
 
 app.use(corsMiddleware);
-app.options("*", corsMiddleware);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/privado", privateRoutes);
@@ -53,7 +52,6 @@ app.use("/api/reservas", reservasRoutes);
 app.use("/api/auditoria", auditoriaRoutes);
 app.use("/api/servicios", serviciosRoutes);
 app.use("/api/dashboard", dashboardRoutes);
-
 app.get("/health", (req, res) => {
   res.status(200).json({
     ok: true,
